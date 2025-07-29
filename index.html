@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Loan Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Loan(EMI) Compare</h1>
+            <p>Compare loan offers from top banks and find the best EMI plan for your needs</p>
+        </header>
+
+        <div class="calculator">
+            <div class="loan-tabs">
+                <div class="loan-tab active" data-loan="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home Loan</span>
+                </div>
+                <div class="loan-tab" data-loan="personal">
+                    <i class="fas fa-wallet"></i>
+                    <span>Personal Loan</span>
+                </div>
+                <div class="loan-tab" data-loan="car">
+                    <i class="fas fa-car"></i>
+                    <span>Car Loan</span>
+                </div>
+                <div class="loan-tab" data-loan="education">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Education Loan</span>
+                </div>
+                <div class="loan-tab" data-loan="business">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Business Loan</span>
+                </div>
+                <div class="loan-tab" data-loan="two-wheeler">
+                    <i class="fas fa-motorcycle"></i>
+                    <span>Two-Wheeler</span>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label>Loan Amount (₹)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="loanAmount" placeholder="Enter loan amount">
+                    </div>
+                    <div class="error-msg" id="amountError"></div>
+                </div>
+
+                <div class="input-group">
+                    <label>Loan Tenure (Years)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="loanTenure" placeholder="Enter tenure">
+                    </div>
+                    <div class="error-msg" id="tenureError"></div>
+                </div>
+
+                <button class="calculate-btn" id="calculateBtn">Calculate EMI</button>
+            </div>
+
+            <div class="results-section">
+                <div class="summary-card" id="loanSummary">
+                    <h3><i class="fas fa-chart-pie"></i> Loan Summary</h3>
+                    <div class="summary-item">
+                        <div class="label">Loan Type</div>
+                        <div class="value" id="summaryType">Home Loan</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="label">Loan Amount</div>
+                        <div class="value" id="summaryAmount">₹0</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="label">Loan Tenure</div>
+                        <div class="value" id="summaryTenure">0 years</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="label">Best Rate</div>
+                        <div class="value" id="summaryRate">0%</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="label">Lowest EMI</div>
+                        <div class="value" id="summaryEMI">₹0</div>
+                    </div>
+
+                    <div class="best-offer">
+                        <div class="best-offer-title">
+                            <i class="fas fa-crown"></i>
+                            <span>Best Loan Offer</span>
+                        </div>
+                        <div id="bestBank">-</div>
+                        <a href="#" class="apply-best-btn" id="bestBankLink" target="_blank"><i class="fas fa-paper-plane"></i> Apply Now</a>
+                    </div>
+                </div>
+
+                <div class="bank-grid" id="bankGrid">
+                    <div class="empty-state">
+                        <h3>Calculate Your Loan</h3>
+                        <p>Enter your loan details and click "Calculate EMI" to see personalized loan offers from top banks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Note: The loan offers are subject to change. Please check with the bank for the latest rates and terms.</p>
+            <p>© 2025 emicompare.com | All rights reserved. Powered by Berojgarpur</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
